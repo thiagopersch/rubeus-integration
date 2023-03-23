@@ -4,10 +4,11 @@ import Heading, { HeadingProps } from ".";
 export default {
   title: "Heading",
   component: Heading,
+  args: {
+    children: "Heading",
+  },
   argTypes: {
-    children: {
-      type: "string",
-    },
+    children: { type: "string" },
   },
 } as Meta;
 

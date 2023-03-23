@@ -27,6 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         height={5}
       />
       <ToastContainer />
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 };

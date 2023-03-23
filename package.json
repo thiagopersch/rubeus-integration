@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@styled-icons/feather": "^10.47.0",
     "@styled-icons/material-outlined": "^10.47.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",

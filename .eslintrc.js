@@ -26,5 +26,6 @@ module.exports = {
     "eslint-disable-next-line": "off",
     "no-undef": "off",
     "no-unused-vars": "off",
+    "react/prop-types": "off",
   },
 };
