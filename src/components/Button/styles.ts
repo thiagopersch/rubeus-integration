@@ -80,7 +80,7 @@ const wrapperModifiers = {
     padding: 10px;
 
     &:hover {
-      background: ${darken(0.01, theme.colors.white)};
+      background: ${darken(0.05, theme.colors.white)};
       box-shadow: ${theme.shadow.hover};
     }
 
