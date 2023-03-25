@@ -12,8 +12,8 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<HeadingProps> = (args) => <Heading {...args} />;
+export const Light: Story<HeadingProps> = (args) => <Heading {...args} />;
 
-Default.args = {
+Light.args = {
   children: "My Heading",
 };
