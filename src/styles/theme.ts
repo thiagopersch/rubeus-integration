@@ -41,7 +41,8 @@ export default {
       extraBlack: 900,
     },
     sizes: {
-      xsmall: "1rem",
+      xxsmall: "1rem",
+      xsmall: "1.2rem",
       small: "1.6rem",
       medium: "2.4rem",
       large: "3.2rem",
@@ -61,7 +62,7 @@ export default {
   },
   spacings: {
     xxsmall: "0.8rem",
-    xsmall: "1.6rem",
+    xsmall: "1.8rem",
     small: "2.4rem",
     medium: "3.2rem",
     large: "4.0rem",
