@@ -8,15 +8,15 @@ import protectedRoutes from "../utils/protected-routes";
 export default function AppIndex() {
   const { push } = useRouter();
 
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
   useEffect(() => {
-    if (session) {
-      push("/auth");
-    } else {
-      push("/sign-in");
-    }
-  }, [session, push]);
+    //   if (session) {
+    //     push("/auth");
+    //   } else {
+    push("/home");
+    //   }
+  }, [/*session,*/ push]);
 
   return <></>;
 }

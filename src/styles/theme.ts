@@ -3,6 +3,7 @@ export default {
     darkPrimaryColor: "#004747",
     primaryColor: "#0DA6A6",
     lightPrimaryColor: "#3DD5D6",
+    black: "#000000",
     white: "#FFFFFF",
     lightGrey: "#808080",
     primaryGrey: "#4D4D4D",
@@ -40,7 +41,7 @@ export default {
       extraBlack: 900,
     },
     sizes: {
-      xsmall: "8rem",
+      xsmall: "1rem",
       small: "1.6rem",
       medium: "2.4rem",
       large: "3.2rem",
@@ -73,5 +74,14 @@ export default {
     fast: "all 0.3s ease-in-out;",
     normal: "all 1s ease-in-out;",
     slow: "all 2s ease-in-out;",
+  },
+  layers: {
+    base: 10,
+    menu: 20,
+    cardOverlay: 30,
+    card: 40,
+    overlay: 50,
+    modal: 60,
+    alwaysOnTop: 70,
   },
 } as const;

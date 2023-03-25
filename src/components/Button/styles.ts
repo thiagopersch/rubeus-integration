@@ -58,6 +58,36 @@ const wrapperModifiers = {
       background: ${darken(0.05, theme.colors.white)};
     }
   `,
+  secondary: (theme: DefaultTheme) => css`
+    background: ${theme.colors.white};
+    box-shadow: ${theme.shadow.default};
+    color: ${theme.colors.primaryColor};
+    font-weight: ${theme.font.weight.bold};
+    transition: ${theme.transition.fast};
+    border-radius: 10rem;
+
+    &:hover {
+      background: ${darken(0.01, theme.colors.white)};
+      box-shadow: ${theme.shadow.hover};
+    }
+  `,
+  circle: (theme: DefaultTheme) => css`
+    background: ${theme.colors.white};
+    height: 10rem;
+    width: 5rem;
+    border: 0.5px solid ${theme.colors.primaryColor};
+    border-radius: 100rem;
+    padding: 10px;
+
+    &:hover {
+      background: ${darken(0.01, theme.colors.white)};
+      box-shadow: ${theme.shadow.hover};
+    }
+
+    > svg {
+      color: ${theme.colors.primaryColor};
+    }
+  `,
 };
 
 export const Wrapper = styled.button<WrapperProps>`
@@ -75,11 +105,13 @@ export const Wrapper = styled.button<WrapperProps>`
     cursor: pointer;
     font-family: ${theme.font.primary};
     font-weight: ${theme.font.weight.bold};
-    transition: background 0.3s ease;
+    transition: ${theme.transition.fast};
     width: 100%;
+    box-shadow: ${theme.shadow.default};
 
     &:hover {
       background: ${darken(0.05, theme.colors.primaryColor)};
+      box-shadow: ${theme.shadow.hover};
     }
 
     ${!!styleType && wrapperModifiers[styleType](theme)}

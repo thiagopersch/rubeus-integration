@@ -27,5 +27,6 @@ module.exports = {
     "no-undef": "off",
     "no-unused-vars": "off",
     "react/prop-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
   },
 };

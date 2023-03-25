@@ -19,7 +19,7 @@ export default {
     },
     styleType: {
       control: { type: "select" },
-      options: ["normal", "rounded", "outlined"],
+      options: ["normal", "rounded", "outlined", "secondary", "circle"],
     },
   },
 } as Meta;
@@ -36,4 +36,14 @@ withIcon.args = {
   size: "large",
   children: "Adicionar Pessoa",
   icon: <PlusCircle />,
+};
+
+export const CircleWithIcon: Story<ButtonProps> = (args) => (
+  <Button {...args} />
+);
+
+CircleWithIcon.args = {
+  size: "large",
+  icon: <PlusCircle />,
+  styleType: "circle",
 };
