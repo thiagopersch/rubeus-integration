@@ -1,29 +1,35 @@
 import styled, { css } from "styled-components";
+export const Wrapper = styled.div`
+  ${({ theme }) => css`
+    display: block;
+    padding: ${theme.spacings.small};
+  `}
+`;
 
 export const Container = styled.a`
   ${({ theme }) => css`
-    display: block;
-    text-decoration: none;
-    font-size: ${theme.font.sizes.small};
-    padding: ${theme.spacings.small};
-    font-weight: ${theme.font.weight.bold};
     color: ${theme.colors.primaryColor};
+    font-weight: ${theme.font.weight.bold};
     position: relative;
+    text-decoration: none;
 
-    &::after {
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
-      bottom: 0.76rem;
-      left: 50%;
-      width: 0,
+      width: 100%;
       height: 0.2rem;
-      background-color: ${theme.colors.success};
-      transition: ${theme.transition.fast};
+      border-radius: 10rem;
+      background-color: ${theme.colors.darkPrimaryColor};
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
     }
 
-    &:hover::after {
-      left: 25%;
-      width: 50%;
+    &:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
     }
   `}
 `;
