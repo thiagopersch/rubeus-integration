@@ -84,7 +84,7 @@ export const SectionInstagramSocial = styled.section`
   `}
 `;
 
-export const Social = styled.a`
+export const Social = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;

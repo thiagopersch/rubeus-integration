@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Github, Instagram } from "@styled-icons/feather";
 
-import Separator from "../LineBreak";
+import Separator from "../Separator";
 import SectionContainer from "../SectionContainer";
 
 import * as S from "./styles";
@@ -32,6 +32,10 @@ const Footer = ({ children }: FooterProps) => {
       <Separator />
       <S.ContainerCopyright>
         <SectionContainer>
+          {/* <div>
+            Feito com ❤ por{" "}
+            <a href="https://github.com/thiagopersch"> Tiago Persch</a>
+          </div> */}
           <div dangerouslySetInnerHTML={{ __html: children }} />
         </SectionContainer>
       </S.ContainerCopyright>

@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 export type SectionContainerProps = {
-  children: string | React.ReactNode;
+  children?: string | React.ReactNode;
 };
 
 const SectionContainer = ({ children }: SectionContainerProps) => {

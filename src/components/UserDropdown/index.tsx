@@ -1,14 +1,13 @@
 import { useState } from "react";
-import Image from "next/image";
 import { signOut } from "next-auth/react";
+import Image from "next/image";
 
 import * as S from "./styles";
 
 type UserDropdownProps = {
   username: string;
-  image: string;
 };
-const UserDropdown = ({ username, image }: UserDropdownProps) => {
+const UserDropdown = ({ username /*, image*/ }: UserDropdownProps) => {
   const [show, setShow] = useState(false);
 
   const handleSignout = async () => {
@@ -25,9 +24,10 @@ const UserDropdown = ({ username, image }: UserDropdownProps) => {
         <S.Title onClick={toggleDropdown}>
           <S.UserContainer>
             <span>
-              {username} <S.ArrowIcon isOpen={show} />
+              {username ? username : "Tiago Persch"}
+              <S.ArrowIcon isOpen={show} />
             </span>
-            <S.UserImage>
+            {/* <S.UserImage>
               <Image
                 src={image}
                 fill
@@ -36,13 +36,15 @@ const UserDropdown = ({ username, image }: UserDropdownProps) => {
                 sizes="80px"
                 alt={username}
               />
-            </S.UserImage>
+            </S.UserImage> */}
           </S.UserContainer>
         </S.Title>
         <S.Content isOpen={show}>
           <ul>
             <S.ListItem>Meu perfil</S.ListItem>
-            <S.ListItem onClick={handleSignout}>Sair</S.ListItem>
+            <S.ListItem onClick={handleSignout} style={{ color: "red" }}>
+              Sair
+            </S.ListItem>
           </ul>
         </S.Content>
       </S.Container>

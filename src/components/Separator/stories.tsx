@@ -1,5 +1,6 @@
 import { Story, Meta } from "@storybook/react";
-import Separator, { SeparatorProps } from ".";
+
+import Separator from ".";
 
 export default {
   title: "Separator",
@@ -9,4 +10,4 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<SeparatorProps> = (args) => <Separator {...args} />;
+export const Default: Story = (args) => <Separator {...args} />;

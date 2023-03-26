@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 
 import protectedRoutes from "../utils/protected-routes";
 
