@@ -59,9 +59,6 @@ const Base: React.ForwardRefRenderFunction<BaseRef, BaseProps> = (
       <S.Content ref={contentRef}>
         <PageContainer>{children}</PageContainer>
       </S.Content>
-      <Footer
-        children={`<p>Feito com ❤ por <a href="https://github.com/thiagopersch">Tiago Persch</a></p>`}
-      />
     </>
   );
 };

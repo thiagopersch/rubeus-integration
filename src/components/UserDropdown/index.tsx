@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { signOut } from "next-auth/react";
-import Image from "next/image";
+import Link from "next/link";
 
 import * as S from "./styles";
+import Button from "../Button";
 
 type UserDropdownProps = {
   username: string;
@@ -20,13 +21,18 @@ const UserDropdown = ({ username /*, image*/ }: UserDropdownProps) => {
 
   return (
     <S.Wrapper>
+      <S.WrapperButton>
+        <Button size="large" styleType="normal" as="a" href="/login">
+          Login
+        </Button>
+      </S.WrapperButton>
       <S.Container isOpen={show}>
         <S.Title onClick={toggleDropdown}>
           <S.UserContainer>
-            <span>
+            {/* <span>
               {username ? username : "Tiago Persch"}
               <S.ArrowIcon isOpen={show} />
-            </span>
+            </span> */}
             {/* <S.UserImage>
               <Image
                 src={image}

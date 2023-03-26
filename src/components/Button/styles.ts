@@ -42,7 +42,15 @@ const wrapperModifiers = {
       filter: saturate(30%);
     }
   `,
-  normal: () => css``,
+  normal: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.white};
+    color: ${theme.colors.darkGrey};
+    width: 20rem;
+
+    &:hover {
+      background: ${darken(0.05, theme.colors.white)};
+    }
+  `,
   rounded: () => css`
     border-radius: 10rem;
   `,
@@ -55,7 +63,8 @@ const wrapperModifiers = {
     border-radius: 10rem;
 
     &:hover {
-      background: ${darken(0.05, theme.colors.white)};
+      background: ${darken(0.5, theme.colors.white)};
+      box-shadow: ${theme.shadow.hover};
     }
   `,
   secondary: (theme: DefaultTheme) => css`

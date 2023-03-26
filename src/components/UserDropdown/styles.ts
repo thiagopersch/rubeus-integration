@@ -1,10 +1,19 @@
 import styled, { css } from "styled-components";
 import { ChevronDown } from "@styled-icons/feather";
+import media from "styled-media-query";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: contents;
     --z-idx: calc(${theme.layers.overlay} - 1);
+  `}
+`;
+
+export const WrapperButton = styled.div`
+  padding-right: 2rem;
+
+  ${media.lessThan("medium")`
+    display: none;
   `}
 `;
 
@@ -18,7 +27,7 @@ export const Container = styled.div<ContainerProps>`
     position: relative;
     height: 100%;
     width: 100%;
-    min-width: 20rem;
+    /* min-width: 20rem; */
     color: ${theme.colors.mainBg};
     display: flex;
     align-items: center;
@@ -119,6 +128,10 @@ export const UserContainer = styled.div`
     font-weight: ${theme.font.weight.normal};
     padding: ${theme.spacings.small}
     color: ${theme.colors.white};
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.xsmall};
+    `}
   `}
 `;
 
