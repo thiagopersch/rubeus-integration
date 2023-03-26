@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import * as S from "./styles";
 import Button from "../Button";
+import { User } from "@styled-icons/feather";
 
 type UserDropdownProps = {
   username: string;
@@ -22,9 +23,13 @@ const UserDropdown = ({ username /*, image*/ }: UserDropdownProps) => {
   return (
     <S.Wrapper>
       <S.WrapperButton>
-        <Button size="large" styleType="normal" as="a" href="/login">
-          Login
-        </Button>
+        <Button
+          size="large"
+          styleType="circle"
+          as="a"
+          href="/login"
+          icon={<User />}
+        />
       </S.WrapperButton>
       <S.Container isOpen={show}>
         <S.Title onClick={toggleDropdown}>
