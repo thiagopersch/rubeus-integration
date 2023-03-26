@@ -23,13 +23,9 @@ const UserDropdown = ({ username /*, image*/ }: UserDropdownProps) => {
   return (
     <S.Wrapper>
       <S.WrapperButton>
-        <Button
-          size="large"
-          styleType="circle"
-          as="a"
-          href="/login"
-          icon={<User />}
-        />
+        <Link href="/login">
+          <Button size="large" styleType="circle" icon={<User />} />
+        </Link>
       </S.WrapperButton>
       <S.Container isOpen={show}>
         <S.Title onClick={toggleDropdown}>
