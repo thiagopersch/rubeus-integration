@@ -7,6 +7,7 @@ import PageContainer from "@/components/PageContainer";
 import Footer from "@/components/Footer";
 
 import * as S from "./styles";
+import Dropdown from "@/components/Dropdown";
 
 type BaseProps = {
   children: string | React.ReactNode;
@@ -48,7 +49,7 @@ const Base: React.ForwardRefRenderFunction<BaseRef, BaseProps> = (
               <Link href="/">Inicio</Link>
             </S.MenuItem>
             <S.MenuItem>
-              <Link href="/">Cadastros</Link>
+              <Dropdown children="Cadastros" />
             </S.MenuItem>
           </S.MenuList>
         </S.Menu>

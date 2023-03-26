@@ -65,7 +65,7 @@ export const MenuItem = styled.li<MenuItemProps>`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: ${theme.colors.white};
+    color: ${theme.colors.darkGrey};
     position: relative;
     text-decoration: none;
     list-style: none;
