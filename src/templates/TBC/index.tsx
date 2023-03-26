@@ -1,12 +1,12 @@
 import Heading from "@/components/Heading";
 import Base from "../Base";
 
-const Home = () => {
+const Tbc = () => {
   return (
     <Base>
-      <Heading>Hello World Home</Heading>
+      <Heading>Hello World TBC</Heading>
     </Base>
   );
 };
 
-export default Home;
+export default Tbc;
