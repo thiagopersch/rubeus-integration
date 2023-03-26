@@ -1,8 +1,7 @@
-import P from "prop-types";
 import * as S from "./styles";
 
 export type SectionContainerProps = {
-  children: string;
+  children: string | React.ReactNode;
 };
 
 const SectionContainer = ({ children }: SectionContainerProps) => {
