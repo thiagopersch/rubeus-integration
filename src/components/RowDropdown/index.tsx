@@ -3,10 +3,10 @@ import Link from "next/link";
 
 import * as S from "./styles";
 
-type UserDropdownProps = {
+type RowDropdownProps = {
   children?: string;
 };
-const Dropdown = ({ children }: UserDropdownProps) => {
+const RowDropdown = ({ children }: RowDropdownProps) => {
   const [show, setShow] = useState(false);
 
   const toggleDropdown = () => {
@@ -26,12 +26,9 @@ const Dropdown = ({ children }: UserDropdownProps) => {
         </S.Title>
         <S.Content isOpen={show}>
           <ul>
-            {/* <S.ListItem>
-              <Link href="/clients">Clientes</Link>
-            </S.ListItem> */}
-            <S.ListItem>
-              <Link href="/tbc">TBC</Link>
-            </S.ListItem>
+            <S.ListItem value="25">25</S.ListItem>
+            <S.ListItem value="50">50</S.ListItem>
+            <S.ListItem value="100">100</S.ListItem>
           </ul>
         </S.Content>
       </S.Container>
@@ -40,4 +37,4 @@ const Dropdown = ({ children }: UserDropdownProps) => {
   );
 };
 
-export default Dropdown;
+export default RowDropdown;

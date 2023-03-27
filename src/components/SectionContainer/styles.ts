@@ -2,12 +2,12 @@ import styled, { css } from "styled-components";
 
 import { SectionContainerProps } from ".";
 
-export const Container = styled.section<SectionContainerProps>`
+export const Container = styled.div<SectionContainerProps>`
   ${({
     theme,
     paddings = "none",
-    columns = "fullwidth",
-    display = "block",
+    columns = "none",
+    display = "flex",
     flexDirection = "row",
     justifyContent = "spaceBetween",
     alignContent = "center",

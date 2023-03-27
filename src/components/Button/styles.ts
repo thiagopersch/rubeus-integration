@@ -112,7 +112,7 @@ export const Wrapper = styled.button<WrapperProps>`
     border: 0;
     outline: none;
     border-radius: 0.6rem;
-    padding: ${theme.spacings.xxsmall};
+    padding: ${theme.spacings.xsmall};
     text-decoration: none;
     cursor: pointer;
     font-family: ${theme.font.primary};

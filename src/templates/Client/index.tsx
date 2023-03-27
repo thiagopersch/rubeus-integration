@@ -1,10 +1,13 @@
+import Card from "@/components/Card";
 import Heading from "@/components/Heading";
 import Base from "../Base";
 
 const Client = () => {
   return (
     <Base>
-      <Heading>Hello World Client</Heading>
+      <Card paddings="medium">
+        <Heading>Hello World Client</Heading>
+      </Card>
     </Base>
   );
 };
