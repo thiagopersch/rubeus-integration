@@ -1,8 +1,8 @@
 import styled, { css, DefaultTheme } from "styled-components";
 import { darken } from "polished";
+import media from "styled-media-query";
 
 import { ButtonProps } from "./";
-import media from "styled-media-query";
 
 export type WrapperProps = {
   hasIcon: boolean;
@@ -124,7 +124,7 @@ export const Wrapper = styled.button<WrapperProps>`
     &:hover {
       background: ${darken(0.05, theme.colors[color])};
       box-shadow: ${theme.shadow.hover};
-    }
+    } 
     ${media.lessThan("medium")`width: 100%`} 
   }
 
