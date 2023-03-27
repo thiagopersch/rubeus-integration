@@ -2,10 +2,11 @@ import styled, { css, DefaultTheme } from "styled-components";
 import { darken } from "polished";
 
 import { ButtonProps } from "./";
+import media from "styled-media-query";
 
 export type WrapperProps = {
   hasIcon: boolean;
-} & Pick<ButtonProps, "size" | "fullWidth" | "styleType">;
+} & Pick<ButtonProps, "size" | "fullWidth" | "styleType" | "color">;
 
 const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
@@ -43,13 +44,7 @@ const wrapperModifiers = {
     }
   `,
   normal: (theme: DefaultTheme) => css`
-    background-color: ${theme.colors.white};
-    color: ${theme.colors.darkGrey};
     width: 20rem;
-
-    &:hover {
-      background: ${darken(0.05, theme.colors.white)};
-    }
   `,
   rounded: () => css`
     border-radius: 10rem;
@@ -100,11 +95,19 @@ const wrapperModifiers = {
 };
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, hasIcon, disabled, styleType }) => css`
+  ${({
+    theme,
+    size,
+    fullWidth,
+    hasIcon,
+    disabled,
+    styleType,
+    color = "darkGrey",
+  }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: ${theme.colors.primaryColor};
+    background: ${theme.colors[color]};
     color: ${theme.colors.white};
     border: 0;
     outline: none;
@@ -119,9 +122,11 @@ export const Wrapper = styled.button<WrapperProps>`
     box-shadow: ${theme.shadow.default};
 
     &:hover {
-      background: ${darken(0.05, theme.colors.primaryColor)};
+      background: ${darken(0.05, theme.colors[color])};
       box-shadow: ${theme.shadow.hover};
     }
+    ${media.lessThan("medium")`width: 100%`} 
+  }
 
     ${!!styleType && wrapperModifiers[styleType](theme)}
     ${!!fullWidth && wrapperModifiers.fullWidth()}

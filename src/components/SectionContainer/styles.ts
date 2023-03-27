@@ -1,10 +1,34 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
-  ${({ theme }) => css`
-    max-width: 100vw;
-    margin: 0 auto;
-    padding: ${theme.spacings.large};
-    width: 100%;
+import { SectionContainerProps } from ".";
+
+export const Container = styled.section<SectionContainerProps>`
+  ${({
+    theme,
+    paddings = "none",
+    columns = "fullwidth",
+    display = "block",
+    flexDirection = "row",
+    justifyContent = "spaceBetween",
+    alignContent = "center",
+    alignItems = "center",
+    margin = "none",
+    marginTop = "none",
+    marginBottom = "none",
+    marginLeft = "none",
+    marginRight = "none",
+  }) => css`
+    display: ${theme.display[display]};
+    flex-direction: ${theme.flexDirection[flexDirection]};
+    justify-content: ${theme.justifyContent[justifyContent]};
+    align-content: ${theme.alignContent[alignContent]};
+    align-items: ${theme.alignItems[alignItems]};
+    padding: ${theme.spacings[paddings]};
+    column-count: ${theme.columns[columns]};
+    margin: ${theme.spacings[margin]};
+    margin-top: ${theme.spacings[marginTop]};
+    margin-bottom: ${theme.spacings[marginBottom]};
+    margin-left: ${theme.spacings[marginLeft]};
+    margin-right: ${theme.spacings[marginRight]};
   `}
 `;

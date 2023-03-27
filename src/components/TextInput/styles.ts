@@ -236,13 +236,12 @@ export const IconButton = styled.button.attrs({ type: "button" })`
   ${({ theme }) => css`
     cursor: pointer;
     height: 100%;
-    background-color: ${theme.colors.white};
-    border: none;
+    stroke-width: 2;
+    background-color: transparent;
+    border: inherit;
     outline: 0;
-    height: 95%;
     margin: 0.2rem;
     margin-left: 0;
     color: ${theme.colors.primaryColor};
-    stroke-width: 2;
   `}
 `;

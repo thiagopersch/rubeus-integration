@@ -1,3 +1,4 @@
+import { DefaultTheme } from "styled-components";
 import { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 // import { withAccessComponent } from "hooks/AccessProvider";
 
@@ -12,6 +13,7 @@ export type ButtonProps = {
   fullWidth?: boolean;
   icon?: React.ReactNode;
   as?: React.ElementType;
+  color?: keyof DefaultTheme["colors"];
   styleType?: "normal" | "rounded" | "outlined" | "secondary" | "circle";
 } & ButtonTypes;
 
@@ -22,6 +24,7 @@ const Button: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
     size = "large",
     fullWidth = false,
     styleType = "normal",
+    color = "primaryColor",
     ...props
   },
   ref,
@@ -32,6 +35,7 @@ const Button: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
     hasIcon={!!icon}
     ref={ref}
     styleType={styleType}
+    color={color}
     {...props}
   >
     {!!icon && icon}

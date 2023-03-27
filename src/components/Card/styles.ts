@@ -1,13 +1,16 @@
 import styled, { css, DefaultTheme } from "styled-components";
 import { ArrowRight } from "@styled-icons/feather";
 
-export const Wrapper = styled.div`
-  ${({ theme }) => css`
+import { CardProps } from ".";
+
+export const Wrapper = styled.div<CardProps>`
+  ${({ theme, paddings = "none", columns = "fullwidth" }) => css`
     display: flex;
     flex-direction: column;
-    height: 20rem;
-    width: 30rem;
-    padding: ${theme.spacings.xxsmall};
+    height: auto;
+    width: auto;
+    padding: ${theme.spacings[paddings]};
+    column-count: ${theme.columns[columns]};
     background: ${theme.colors.white};
     box-shadow: ${theme.shadow.hoverGreen};
     border-radius: 0.3rem;
@@ -40,31 +43,51 @@ export const Content = styled.div<ContentProps>`
   ${({ theme, hasIcon, iconAlign }) => css`
     display: flex;
     flex-direction: column;
-    padding: 0 ${theme.spacings.xxsmall};
-    border-bottom: 0.1rem solid ${theme.colors.lightGrey};
+    padding: ${theme.spacings.xxsmall};
     overflow: hidden;
 
     ${!!hasIcon && contentModifiers.withIcon(theme, iconAlign)};
   `}
 `;
 
-export const Text = styled.h1`
-  ${({ theme }) => css`
+export type TextDescriptionProps = {
+  textAlign: "right" | "center" | "left";
+};
+
+const TextDescriptionModifiers = {
+  withText: (
+    theme: DefaultTheme,
+    align: TextDescriptionProps["textAlign"],
+  ) => css`
+    text-align: ${align === "left"
+      ? "left"
+      : align === "center"
+      ? "center"
+      : "right"};
+  `,
+};
+
+export const Text = styled.h1<TextDescriptionProps>`
+  ${({ theme, textAlign }) => css`
     font-family: ${theme.font.secondary};
     font-weight: ${theme.font.weight.bold};
     font-size: ${theme.font.sizes.xlarge};
     color: ${theme.colors.primaryColor};
     margin-bottom: ${theme.spacings.xxsmall};
+
+    ${!!textAlign && TextDescriptionModifiers.withText(theme, textAlign)}
   `}
 `;
 
-export const Description = styled.p`
-  ${({ theme }) => css`
+export const Description = styled.p<TextDescriptionProps>`
+  ${({ theme, textAlign }) => css`
     font-family: ${theme.font.primary};
     font-weight: ${theme.font.sizes.medium};
     font-size: ${theme.font.sizes.large};
     color: ${theme.colors.primaryGrey};
     margin-bottom: ${theme.spacings.xxsmall};
+
+    ${!!textAlign && TextDescriptionModifiers.withText(theme, textAlign)}
   `}
 `;
 

@@ -21,6 +21,20 @@ const titleCase = (upperCase = false) => css`
   text-transform: ${upperCase ? "uppercase" : "none"};
 `;
 
+export type TextProps = {
+  textAlign: "right" | "center" | "left";
+};
+
+const TextModifiers = {
+  withText: (theme: DefaultTheme, align: TextProps["textAlign"]) => css`
+    text-align: ${align === "left"
+      ? "left"
+      : align === "center"
+      ? "center"
+      : "right"};
+  `,
+};
+
 const mediaFont = (theme: DefaultTheme) => css`
   @media (${theme.media.lteMedium}) {
     font-size: ${theme.font.sizes.xlarge};
@@ -29,12 +43,19 @@ const mediaFont = (theme: DefaultTheme) => css`
 `;
 
 export const Heading = styled.h1<HeadingProps>`
-  ${({ theme, size = "lg", color = "primaryColor", uppercase }) => css`
+  ${({
+    theme,
+    size = "lg",
+    color = "primaryColor",
+    uppercase,
+    textAlign,
+  }) => css`
     color: ${theme.colors[color]};
     font-weight: ${theme.font.weight.bold};
     font-family: ${theme.font.primary};
 
     ${headingModifiers[size](theme)}
+    ${!!textAlign && TextModifiers.withText(theme, textAlign)}
     ${titleCase(uppercase)}
   `}
 `;
